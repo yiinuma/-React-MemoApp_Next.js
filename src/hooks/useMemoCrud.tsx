@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 import { useSetRecoilState } from 'recoil';
 import { memoState } from 'store/memoState';
 import { axiosInstance } from 'lib/axiosInstance';
-import { MemoType } from 'types/memo';
+import { MemoType } from '../types/memo';
 
 export const useMemoCrud = () => {
   const { loginInstance } = axiosInstance();
@@ -21,7 +21,7 @@ export const useMemoCrud = () => {
     loginInstance
       .get<MemoType[]>('/memos', {})
       .then((res) => {
-        toast.success('一覧を取得しました');
+        // toast.success('一覧を取得しました');
         setMemos(res.data);
       })
       .catch(() => {

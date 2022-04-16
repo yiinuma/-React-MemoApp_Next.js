@@ -7,5 +7,5 @@ type Props = {
 
 export const Layout: FC<Props> = memo((props) => {
   const { children } = props;
-  return <div className='px-4pt-4 min-h-screen bg-gradient-to-l from-slate-500 to-slate-700'>{children}</div>;
+  return <div className='min-h-screen bg-gradient-to-l from-slate-500 to-slate-700 px-4 pt-4'>{children}</div>;
 });

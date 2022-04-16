@@ -2,8 +2,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { NextPage } from 'next';
 import { ChangeEventHandler, memo, useEffect, useState } from 'react';
-import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { LoginInput } from 'components/input/LoginInput';
 import { InputField } from 'components/InputField';
@@ -11,7 +9,7 @@ import { authState } from 'store/authState';
 import { useAuth } from 'hooks/useAuth';
 import { useRouter } from 'next/router';
 
-export default function Login() {
+const Login: NextPage = () => {
   const [email, setEMail] = useState<string>('');
   const [pass, setPass] = useState<string>('');
   const { login, loginLoading } = useAuth();
@@ -25,10 +23,11 @@ export default function Login() {
       const exp = new Date(localExp * 1000);
       setAuth(true);
       router.push('/Memo');
-      toast.success('ログインに成功しました');
+      // toast.success('ログインに成功しました');
       console.log('セッション有効期限', exp);
     }
-  }, [auth, router, setAuth]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleEmailChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     setEMail(e.target.value);
@@ -95,4 +94,6 @@ export default function Login() {
       </div>
     </figure>
   );
-}
+};
+
+export default Login;
