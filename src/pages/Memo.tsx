@@ -16,7 +16,7 @@ export default function Memo() {
   return (
     <Layout>
       <div className='mr-8 mt-2 flex flex-row justify-end'>
-        <PrimaryButton onClick={logout}>Logout</PrimaryButton>
+        <PrimaryButton onClick={logout}>Logout!</PrimaryButton>
       </div>
       <MainLayout>
         <Title />
