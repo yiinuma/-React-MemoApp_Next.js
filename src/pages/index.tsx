@@ -22,7 +22,7 @@ const Login: NextPage = () => {
     if (localExp >= new Date().getTime() / 1000 && localAuth) {
       const exp = new Date(localExp * 1000);
       setAuth(true);
-      router.push('memo');
+      router.push('memo-app');
       // toast.success('ログインに成功しました');
       console.log('セッション有効期限', exp);
     }

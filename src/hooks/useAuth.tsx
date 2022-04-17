@@ -44,7 +44,7 @@ export const useAuth = () => {
           localStorage.setItem('auth', JSON.stringify(true));
           localStorage.setItem('token', res.data.access_token);
           localStorage.setItem('exp', JSON.stringify(decodedToken.exp));
-          router.push('memo');
+          router.push('memo-app');
           toast.success('ログインに成功しました');
         })
         .catch(() => {
